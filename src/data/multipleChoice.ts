@@ -172,6 +172,7 @@ export const multipleChoiceQuestions: MCQuestion[] = [
       "Resides below regular antivirus software detection.",
     ],
     correctAnswer: 2,
+    correctAnswers: [2, 4],
     explanation:
       "The two correct answers are 'Requires administrator-level privileges for installation' and 'Resides below regular antivirus software detection.' Rootkits need root/admin-level access to install themselves deep into the operating system, and they operate at a level below where standard antivirus software scans, making them extremely difficult to detect.",
     wrongExplanations: {
@@ -278,6 +279,7 @@ export const multipleChoiceQuestions: MCQuestion[] = [
       "War dialing",
     ],
     correctAnswer: 1,
+    correctAnswers: [1, 2, 3],
     explanation:
       "The three correct answers are Impersonation, Keylogging (physical keylogger installation requires social engineering/physical access), and Shoulder surfing. Impersonation involves pretending to be someone else to gain trust. Shoulder surfing involves observing someone's screen or keyboard. Physical keylogging involves placing a device that requires physical access and social pretexting. Port scanning and war dialing are purely technical reconnaissance attacks.",
     wrongExplanations: {

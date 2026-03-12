@@ -418,6 +418,59 @@ button:disabled {
   margin-bottom: 1.5rem;
 }
 
+.diagram-row-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
+.diagram-row-num {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--accent);
+  min-width: 2rem;
+}
+
+.diagram-row-inputs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+}
+
+.diagram-input-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.diagram-input-label {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-bottom: 0.25rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 500;
+}
+
+.diagram-row-answer {
+  margin-top: 0.5rem;
+  padding-top: 0.5rem;
+  border-top: 1px solid var(--border-color);
+  font-size: 0.85rem;
+}
+
+.diagram-row-answer p {
+  margin-bottom: 0.25rem;
+  color: var(--text-secondary);
+}
+
+.diagram-row-answer .wrong-label {
+  color: var(--wrong);
+  font-weight: 600;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+}
+
 .input-field {
   width: 100%;
   background: var(--bg-surface);
@@ -438,6 +491,65 @@ button:disabled {
 
 .input-field::placeholder {
   color: var(--text-muted);
+}
+
+.short-response-textarea {
+  resize: vertical;
+  min-height: 120px;
+  line-height: 1.6;
+}
+
+.short-response-model {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  line-height: 1.7;
+  white-space: pre-wrap;
+}
+
+.key-points-list {
+  list-style: none;
+  padding: 0;
+}
+
+.key-points-list li {
+  position: relative;
+  padding-left: 1.25rem;
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+  line-height: 1.6;
+  margin-bottom: 0.25rem;
+}
+
+.key-points-list li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: var(--correct);
+  font-weight: 700;
+}
+
+.section-divider {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 2rem 0 1.5rem;
+}
+
+.section-divider::before,
+.section-divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--border-color);
+}
+
+.section-divider span {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  white-space: nowrap;
 }
 
 .modal-overlay {
@@ -579,6 +691,11 @@ button:disabled {
 
   .diagram-image {
     border-radius: 8px;
+  }
+
+  .diagram-row-inputs {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
   }
 
   .input-field {

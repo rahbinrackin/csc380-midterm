@@ -2,34 +2,266 @@ import type { DiagramQuestion } from "../types";
 
 export const diagramQuestions: DiagramQuestion[] = [
   {
-    id: "d1",
-    imageUrl: "/diagrams/lec4-53.png",
-    attackName: "Man-in-the-Middle (MitM)",
+    id: "q30-1",
+    imageUrl: "/diagrams/qbank-06.png",
+    attackName: "Dumpster Diving",
     acceptableNames: [
-      "mitm",
-      "man in the middle",
-      "man-in-the-middle",
-      "mitm attack",
-      "man in the middle attack",
+      "dumpster diving",
+      "dumpster",
+      "trash diving",
+      "google dorking",
     ],
     prevention:
-      "Use encrypted communication protocols (HTTPS/TLS), certificate pinning, VPN",
+      "Shred sensitive documents before disposal, use secure disposal bins, implement a clean-desk policy",
     acceptablePreventions: [
-      "encryption",
-      "https",
-      "tls",
-      "ssl",
-      "vpn",
-      "certificate",
-      "encrypted",
+      "shred",
+      "secure disposal",
+      "clean desk",
+      "destroy",
+      "cross-cut",
     ],
     explanation:
-      "A Man-in-the-Middle attack occurs when an attacker secretly intercepts and potentially alters communication between two parties who believe they are communicating directly with each other. The attacker positions themselves between the sender and receiver, relaying messages while having the ability to read, modify, or inject new data. This attack is especially dangerous on unsecured Wi-Fi networks and can be mitigated through strong encryption and certificate validation.",
+      "Dumpster diving involves searching through an organization's trash to find sensitive information such as documents, passwords, or discarded hardware. Attackers look for calendars, memos, phone directories, system manuals, and other items that reveal internal details. Shredding all sensitive documents before disposal is the primary defense.",
   },
   {
-    id: "d2",
-    imageUrl: "/diagrams/lec4-55.png",
-    attackName: "ARP Spoofing/Poisoning",
+    id: "q30-2",
+    imageUrl: "/diagrams/qbank-06.png",
+    attackName: "Shoulder Surfing",
+    acceptableNames: [
+      "shoulder surfing",
+      "shoulder surf",
+    ],
+    prevention:
+      "Use privacy screens on monitors, be aware of surroundings when entering passwords",
+    acceptablePreventions: [
+      "privacy screen",
+      "privacy filter",
+      "aware",
+      "shield",
+      "cover",
+      "block view",
+    ],
+    explanation:
+      "Shoulder surfing is a physical social engineering attack where an attacker casually observes someone entering sensitive information such as passwords, PINs, or security codes on a keypad. Privacy screens and situational awareness are the primary defenses.",
+  },
+  {
+    id: "q30-3",
+    imageUrl: "/diagrams/qbank-06.png",
+    attackName: "Tailgating / Piggybacking",
+    acceptableNames: [
+      "tailgating",
+      "piggybacking",
+      "piggyback",
+      "tailgate",
+    ],
+    prevention:
+      "Use mantraps or security vestibules, require individual badge scanning, security awareness training",
+    acceptablePreventions: [
+      "mantrap",
+      "security vestibule",
+      "badge",
+      "access control",
+      "id card",
+      "guard",
+      "awareness",
+    ],
+    explanation:
+      "Tailgating (also called piggybacking) occurs when an unauthorized person follows an authorized person through a secured door or entry point. The attacker relies on the authorized person holding the door open or not noticing them. Mantraps, individual badge scanning, and security awareness training are effective countermeasures.",
+  },
+  {
+    id: "q30-4",
+    imageUrl: "/diagrams/qbank-06.png",
+    attackName: "Stored XSS (Cross-Site Scripting)",
+    acceptableNames: [
+      "xss",
+      "cross-site scripting",
+      "cross site scripting",
+      "stored xss",
+      "persistent xss",
+    ],
+    prevention:
+      "Input validation and sanitization, encode output, use Content Security Policy (CSP)",
+    acceptablePreventions: [
+      "input validation",
+      "sanitiz",
+      "encode",
+      "escap",
+      "csp",
+      "content security policy",
+      "validat",
+    ],
+    explanation:
+      "Cross-Site Scripting (XSS) exploits a website that accepts user input without proper validation. In a stored XSS attack, malicious script is permanently stored on the target server and served to other users. Input validation, output encoding, and Content Security Policy headers are the primary defenses.",
+  },
+  {
+    id: "q30-5",
+    imageUrl: "/diagrams/qbank-06.png",
+    attackName: "CSRF (Cross-Site Request Forgery)",
+    acceptableNames: [
+      "csrf",
+      "cross-site request forgery",
+      "cross site request forgery",
+      "xsrf",
+      "csfr",
+    ],
+    prevention:
+      "Use anti-CSRF tokens, validate Referer headers, require re-authentication for sensitive actions",
+    acceptablePreventions: [
+      "token",
+      "anti-csrf",
+      "csrf token",
+      "referer",
+      "re-authenticat",
+      "same-site cookie",
+      "samesite",
+    ],
+    explanation:
+      "Cross-Site Request Forgery (CSRF) takes advantage of an authentication token that a website sends to a user's browser. If a user is authenticated on a site and then visits a malicious page, the new page can inherit the user's identity and perform undesired actions. Anti-CSRF tokens and SameSite cookies are the primary defenses.",
+  },
+  {
+    id: "q30-6",
+    imageUrl: "/diagrams/qbank-06.png",
+    attackName: "Buffer Overflow",
+    acceptableNames: [
+      "buffer overflow",
+      "buffer overrun",
+      "stack overflow",
+      "heap overflow",
+    ],
+    prevention:
+      "Input validation, bounds checking, use safe programming languages, ASLR, DEP",
+    acceptablePreventions: [
+      "input validation",
+      "bounds check",
+      "aslr",
+      "dep",
+      "safe language",
+      "canary",
+      "stack protect",
+      "non-executable",
+      "validat",
+    ],
+    explanation:
+      "A buffer overflow occurs when a process stores data beyond the boundaries of a fixed-length buffer, overwriting adjacent memory. This can crash the application or allow attackers to execute arbitrary code. Defenses include compile-time approaches (safe languages, stack canaries, safe libraries) and run-time approaches (ASLR, DEP/NX bit, guard pages).",
+  },
+  {
+    id: "q30-7",
+    imageUrl: "/diagrams/qbank-06.png",
+    attackName: "DNS Cache Poisoning",
+    acceptableNames: [
+      "dns cache poisoning",
+      "dns poisoning",
+      "dns spoofing",
+      "dns hijacking",
+    ],
+    prevention:
+      "Use DNSSEC, flush DNS cache regularly, use trusted DNS servers",
+    acceptablePreventions: [
+      "dnssec",
+      "flush dns",
+      "trusted dns",
+      "dns security",
+    ],
+    explanation:
+      "DNS cache poisoning corrupts the DNS resolver cache by injecting fraudulent entries, causing a domain name to resolve to an incorrect IP address. Victims are redirected to a malicious site while believing they are visiting a legitimate one. DNSSEC and trusted DNS servers are the primary defenses.",
+  },
+  {
+    id: "q30-8",
+    imageUrl: "/diagrams/qbank-06.png",
+    attackName: "DDoS (Distributed Denial of Service)",
+    acceptableNames: [
+      "ddos",
+      "dos",
+      "distributed denial of service",
+      "denial of service",
+      "ddos attack",
+      "dos attack",
+    ],
+    prevention:
+      "Rate limiting, DDoS protection/mitigation services, traffic filtering, firewalls",
+    acceptablePreventions: [
+      "rate limit",
+      "firewall",
+      "ddos protection",
+      "traffic filter",
+      "load balanc",
+      "mitigation",
+    ],
+    explanation:
+      "A Distributed Denial of Service (DDoS) attack uses multiple compromised systems (a botnet) to flood a target with overwhelming traffic, making it unavailable to legitimate users. Rate limiting, dedicated DDoS mitigation services, and traffic filtering are the primary defenses.",
+  },
+  {
+    id: "q30-9",
+    imageUrl: "/diagrams/qbank-06.png",
+    attackName: "Impersonation",
+    acceptableNames: [
+      "impersonation",
+      "masquerading",
+      "masquerade",
+      "identity fraud",
+    ],
+    prevention:
+      "Verify identities, use multi-factor authentication, security awareness training",
+    acceptablePreventions: [
+      "verify",
+      "mfa",
+      "multi-factor",
+      "two-factor",
+      "authentication",
+      "awareness",
+      "identity",
+    ],
+    explanation:
+      "Impersonation (masquerading) is when an attacker pretends to be a real or fictitious character to gain the victim's trust. The attacker plays the role of that person to extract information or gain unauthorized access. Multi-factor authentication and identity verification are the primary defenses.",
+  },
+  {
+    id: "q30-10",
+    imageUrl: "/diagrams/qbank-06.png",
+    attackName: "Ransomware",
+    acceptableNames: [
+      "ransomware",
+      "cryptomalware",
+      "crypto-malware",
+      "ransom",
+    ],
+    prevention:
+      "Regular backups, antimalware software, security awareness training, keep systems patched",
+    acceptablePreventions: [
+      "backup",
+      "antimalware",
+      "antivirus",
+      "patch",
+      "update",
+      "awareness",
+    ],
+    explanation:
+      "Ransomware prevents a user's device from functioning properly until a fee is paid. Cryptomalware encrypts all files so none can be opened without a decryption key. Regular offline backups, up-to-date antimalware, patch management, and user awareness training are the primary defenses.",
+  },
+  {
+    id: "q30-11",
+    imageUrl: "/diagrams/qbank-07.png",
+    attackName: "DNS Poisoning",
+    acceptableNames: [
+      "dns poisoning",
+      "dns spoofing",
+      "dns cache poisoning",
+      "dns hijacking",
+    ],
+    prevention:
+      "Use DNSSEC, use trusted DNS servers, monitor DNS traffic",
+    acceptablePreventions: [
+      "dnssec",
+      "trusted dns",
+      "monitor dns",
+      "dns security",
+    ],
+    explanation:
+      "DNS poisoning corrupts the DNS resolution process so that queries return incorrect IP addresses, redirecting victims to attacker-controlled servers. DNSSEC adds cryptographic verification to DNS responses to prevent tampering.",
+  },
+  {
+    id: "q30-12",
+    imageUrl: "/diagrams/qbank-07.png",
+    attackName: "ARP Spoofing",
     acceptableNames: [
       "arp spoofing",
       "arp poisoning",
@@ -37,7 +269,7 @@ export const diagramQuestions: DiagramQuestion[] = [
       "arp cache poisoning",
     ],
     prevention:
-      "Use static ARP entries, implement Dynamic ARP Inspection (DAI), use VPN",
+      "Use static ARP entries, Dynamic ARP Inspection (DAI), use VPN",
     acceptablePreventions: [
       "static arp",
       "dai",
@@ -46,206 +278,78 @@ export const diagramQuestions: DiagramQuestion[] = [
       "vpn",
     ],
     explanation:
-      "ARP Spoofing involves sending falsified ARP (Address Resolution Protocol) messages over a local network, linking the attacker's MAC address to the IP address of a legitimate host. This causes traffic meant for that IP address to be redirected to the attacker instead. Once successful, the attacker can intercept, modify, or stop data in transit, effectively enabling a man-in-the-middle position on the LAN.",
+      "ARP Spoofing sends falsified ARP messages over a local network, linking the attacker's MAC address to the IP address of a legitimate host. Traffic meant for that IP is redirected to the attacker, enabling man-in-the-middle interception. Static ARP entries and Dynamic ARP Inspection (DAI) are the primary defenses.",
   },
   {
-    id: "d3",
-    imageUrl: "/diagrams/lec4-56.png",
-    attackName: "DNS Hijacking/Poisoning",
+    id: "q30-13",
+    imageUrl: "/diagrams/qbank-07.png",
+    attackName: "Smurf Attack (Amplification DDoS)",
     acceptableNames: [
-      "dns hijacking",
-      "dns poisoning",
-      "dns spoofing",
-      "dns cache poisoning",
+      "smurf",
+      "smurf attack",
+      "amplification",
+      "reflection",
+      "amplification ddos",
+      "reflection ddos",
+      "icmp flood",
     ],
-    prevention:
-      "Use DNSSEC, regularly flush DNS cache, use trusted DNS servers",
-    acceptablePreventions: [
-      "dnssec",
-      "dns security",
-      "flush dns",
-      "trusted dns",
-    ],
-    explanation:
-      "DNS Hijacking or Poisoning corrupts the DNS resolution process by injecting fraudulent DNS entries into a resolver's cache. When a victim queries the poisoned DNS server for a domain name, they receive an incorrect IP address that redirects them to a malicious site controlled by the attacker. This can be used for phishing, credential theft, or distributing malware while the victim believes they are visiting a legitimate website.",
-  },
-  {
-    id: "d4",
-    imageUrl: "/diagrams/lec4-57.png",
-    attackName: "TCP/IP Hijacking",
-    acceptableNames: [
-      "tcp/ip hijacking",
-      "tcp hijacking",
-      "session hijacking",
-      "tcp/ip session hijacking",
-    ],
-    prevention:
-      "Use encrypted sessions (TLS/SSL), implement proper session management",
-    acceptablePreventions: [
-      "encryption",
-      "tls",
-      "ssl",
-      "session management",
-      "encrypted",
-    ],
-    explanation:
-      "TCP/IP Hijacking exploits the stateful nature of TCP connections by allowing an attacker to take over an established TCP session between two hosts. The attacker predicts or sniffs TCP sequence numbers and injects packets that appear to come from the legitimate communicating party. This gives the attacker unauthorized access to resources and data that were part of the active session without needing to authenticate.",
-  },
-  {
-    id: "d5",
-    imageUrl: "/diagrams/lec4-58.png",
-    attackName: "DoS/DDoS Attack",
-    acceptableNames: [
-      "dos",
-      "ddos",
-      "denial of service",
-      "distributed denial of service",
-      "dos attack",
-      "ddos attack",
-    ],
-    prevention:
-      "Implement rate limiting, use DDoS protection services, configure firewalls",
-    acceptablePreventions: [
-      "rate limit",
-      "firewall",
-      "ddos protection",
-      "load balancer",
-      "traffic filter",
-    ],
-    explanation:
-      "A Denial of Service (DoS) attack overwhelms a target system with excessive traffic or resource requests, rendering it unavailable to legitimate users. In a Distributed Denial of Service (DDoS) variant, the attack traffic originates from many compromised systems (a botnet), making it much harder to block. DDoS attacks target the availability pillar of the CIA triad and can be volumetric, protocol-based, or application-layer attacks.",
-  },
-  {
-    id: "d6",
-    imageUrl: "/diagrams/lec4-59.png",
-    attackName: "Smurf Attack",
-    acceptableNames: ["smurf", "smurf attack"],
     prevention:
       "Disable IP-directed broadcasts, configure routers to not forward broadcast traffic",
     acceptablePreventions: [
       "disable broadcast",
-      "broadcast",
-      "router config",
       "ip directed broadcast",
+      "router config",
+      "broadcast",
       "firewall",
+      "ingress filter",
     ],
     explanation:
-      "A Smurf Attack is a type of DDoS attack that exploits ICMP (Internet Control Message Protocol) by sending spoofed ping requests to a network's broadcast address with the victim's IP as the source. Every host on the network responds to the broadcast, flooding the victim with a massive volume of ICMP echo replies. The amplification factor makes this attack particularly devastating, as a single packet can generate hundreds of responses.",
+      "A Smurf Attack is an amplification/reflection DDoS attack that sends spoofed ICMP ping requests to a network's broadcast address using the victim's IP as the source. Every host on the network responds, flooding the victim with echo replies. Disabling IP-directed broadcasts on routers is the primary defense. (Note: The lecture slides refer to this as 'Smurf Attack' — verify with your course slides if 'Amplification DDoS' is also accepted.)",
   },
   {
-    id: "d7",
-    imageUrl: "/diagrams/lec4-60.png",
-    attackName: "Spoofing",
-    acceptableNames: ["spoofing", "ip spoofing", "identity spoofing"],
+    id: "q30-14",
+    imageUrl: "/diagrams/qbank-07.png",
+    attackName: "IP Spoofing",
+    acceptableNames: [
+      "ip spoofing",
+      "spoofing",
+      "ip spoof",
+      "address spoofing",
+    ],
     prevention:
-      "Implement packet filtering, use authentication protocols, ingress/egress filtering",
+      "Ingress/egress packet filtering, use authentication protocols",
     acceptablePreventions: [
       "packet filter",
-      "authentication",
       "ingress",
       "egress",
       "filtering",
-    ],
-    explanation:
-      "Spoofing is the act of disguising a communication or identity so that it appears to come from a trusted source. IP spoofing involves forging the source IP address in packet headers, while other forms include email spoofing, caller ID spoofing, and MAC spoofing. Spoofing is frequently used as a component of other attacks like DoS, MitM, and session hijacking to hide the attacker's true origin.",
-  },
-  {
-    id: "d8",
-    imageUrl: "/diagrams/lec4-61.png",
-    attackName: "Driver Manipulation",
-    acceptableNames: [
-      "driver manipulation",
-      "driver shimming",
-      "driver attack",
-    ],
-    prevention:
-      "Use driver signing, keep drivers updated, use whitelisting",
-    acceptablePreventions: [
-      "driver signing",
-      "update",
-      "whitelist",
-      "signed drivers",
-    ],
-    explanation:
-      "Driver Manipulation involves tampering with device drivers—the software that allows the operating system to communicate with hardware. Techniques include shimming (placing code between the OS and the driver to intercept and modify calls) and refactoring (altering the driver's internal logic). Because drivers operate at a high privilege level in the OS kernel, compromised drivers can give attackers deep system access that is difficult to detect.",
-  },
-  {
-    id: "d9",
-    imageUrl: "/diagrams/lec4-63.png",
-    attackName: "Pass the Hash",
-    acceptableNames: ["pass the hash", "hash attack", "pass-the-hash"],
-    prevention:
-      "Use strong authentication (Kerberos), limit credential caching, use privileged access management",
-    acceptablePreventions: [
-      "kerberos",
-      "credential",
-      "privileged access",
-      "strong authentication",
-      "mfa",
-    ],
-    explanation:
-      "Pass the Hash is an attack technique where an attacker captures the hashed version of a user's password and uses it directly to authenticate to a service without needing to crack or know the actual plaintext password. This works because many authentication protocols (like NTLM) use the password hash rather than the password itself for verification. It highlights why credential storage and session management security are critical.",
-  },
-  {
-    id: "d10",
-    imageUrl: "/diagrams/lec4-64.png",
-    attackName: "Typosquatting",
-    acceptableNames: ["typosquatting", "typo squatting", "url hijacking"],
-    prevention:
-      "Register common misspellings of domain names, use bookmarks, verify URLs carefully",
-    acceptablePreventions: [
-      "register",
-      "bookmark",
-      "verify url",
-      "check url",
-      "domain registration",
-    ],
-    explanation:
-      "Typosquatting (also called URL hijacking) is a social engineering attack where an attacker registers domain names that are common misspellings or visual look-alikes of popular websites. When users accidentally mistype a URL, they are directed to the attacker's site which may look identical to the legitimate one. These fake sites are used to steal credentials, distribute malware, or generate ad revenue from the misdirected traffic.",
-  },
-  {
-    id: "d11",
-    imageUrl: "/diagrams/lec2-02.png",
-    attackName: "Eavesdropping",
-    acceptableNames: [
-      "eavesdropping",
-      "sniffing",
-      "packet sniffing",
-      "network eavesdropping",
-    ],
-    prevention:
-      "Use encryption for data in transit, implement VPN, use secure protocols",
-    acceptablePreventions: [
-      "encryption",
-      "vpn",
-      "secure protocol",
-      "encrypted",
-      "tls",
-      "https",
-    ],
-    explanation:
-      "Eavesdropping (also known as sniffing) is a passive attack where an attacker secretly monitors network communications to capture sensitive data such as passwords, credit card numbers, or confidential messages. Unlike active attacks, eavesdropping does not alter the data in transit, making it harder to detect. It targets the confidentiality aspect of the CIA triad and is particularly effective on unencrypted or poorly secured network segments.",
-  },
-  {
-    id: "d12",
-    imageUrl: "/diagrams/lec2-05.png",
-    attackName: "Impersonation/Masquerading",
-    acceptableNames: [
-      "impersonation",
-      "masquerading",
-      "masquerade",
-      "identity theft",
-    ],
-    prevention:
-      "Implement strong authentication, use multi-factor authentication, verify identities",
-    acceptablePreventions: [
       "authentication",
-      "mfa",
-      "multi-factor",
-      "verify identity",
-      "two-factor",
+      "firewall",
     ],
     explanation:
-      "Impersonation (or masquerading) is an attack in which an adversary assumes the identity of a legitimate user, system, or entity to gain unauthorized access to resources. This can occur at the network level (IP or MAC spoofing), application level (stolen credentials), or social level (pretending to be IT support). Strong multi-factor authentication is the primary defense because it requires proof of identity beyond just something you know.",
+      "IP Spoofing involves forging the source IP address in packet headers to disguise the attacker's identity or impersonate a trusted host. It is frequently used as a component of other attacks like DDoS, MitM, and session hijacking. Ingress and egress filtering at the network perimeter are the primary defenses.",
+  },
+  {
+    id: "q30-15",
+    imageUrl: "/diagrams/qbank-07.png",
+    attackName: "Pharming",
+    acceptableNames: [
+      "pharming",
+      "domain hijacking",
+      "url redirection",
+      "dns redirection",
+    ],
+    prevention:
+      "Use DNSSEC, keep hosts file secure, verify SSL certificates",
+    acceptablePreventions: [
+      "dnssec",
+      "hosts file",
+      "ssl",
+      "certificate",
+      "https",
+      "verify url",
+    ],
+    explanation:
+      "Pharming exploits how a URL is converted into its corresponding IP address, redirecting users from legitimate sites to fraudulent ones without their knowledge. Unlike phishing, pharming does not require the user to click a malicious link — the redirection happens automatically. DNSSEC and SSL certificate verification are the primary defenses. (Note: The lecture slides use the term 'Pharming' — 'Domain Hijacking' is not explicitly mentioned in the slides. Verify with your course slides.)",
   },
 ];

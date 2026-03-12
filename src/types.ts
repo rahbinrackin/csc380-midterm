@@ -3,6 +3,7 @@ export interface MCQuestion {
   question: string;
   choices: string[];
   correctAnswer: number;
+  correctAnswers?: number[];
   explanation: string;
   wrongExplanations: Record<number, string>;
   category?: string;
@@ -30,6 +31,16 @@ export interface DiagramQuestion {
   prevention: string;
   acceptablePreventions: string[];
   explanation: string;
+}
+
+export interface ShortResponseQuestion {
+  id: string;
+  question: string;
+  modelAnswer: string;
+  keyPoints: string[];
+  category?: string;
+  source?: "bank" | "lecture";
+  group: "exam" | "extra";
 }
 
 export interface WrongAnswerRecord {
