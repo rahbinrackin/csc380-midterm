@@ -12,21 +12,25 @@ interface Props {
   onBack: () => void;
 }
 
+type DMode = "pick" | "all" | "mc" | "sr";
+
 type QueueItem =
   | { type: "mc"; question: MCQuestion }
   | { type: "sr"; question: ShortResponseQuestion; dividerLabel?: string };
 
-export default function SectionD({ onComplete, onBack }: Props) {
-  const queue = useMemo(() => {
-    const items: QueueItem[] = [];
+function buildQueue(mode: "all" | "mc" | "sr"): QueueItem[] {
+  const items: QueueItem[] = [];
 
+  if (mode === "all" || mode === "mc") {
     let mcQs: MCQuestion[] = shuffle([...bufferOverflowQuestions]);
     if (isLectureModeEnabled()) {
       const lecBO = lectureQuestions.filter((q) => q.category === "BUFFER OVERFLOW");
       mcQs = [...mcQs, ...shuffle(lecBO).slice(0, 2)];
     }
     mcQs.forEach((q) => items.push({ type: "mc", question: q }));
+  }
 
+  if (mode === "all" || mode === "sr") {
     const examSR = shortResponseQuestions.filter((q) => q.group === "exam");
     const extraSR = shortResponseQuestions.filter((q) => q.group === "extra");
 
@@ -34,7 +38,7 @@ export default function SectionD({ onComplete, onBack }: Props) {
       items.push({
         type: "sr",
         question: q,
-        dividerLabel: i === 0 ? "Exam Questions — Short Response" : undefined,
+        dividerLabel: i === 0 && mode === "all" ? "Exam Questions — Short Response" : undefined,
       })
     );
 
@@ -45,12 +49,62 @@ export default function SectionD({ onComplete, onBack }: Props) {
         dividerLabel: i === 0 ? "Extra Practice — Short Response" : undefined,
       })
     );
+  }
 
-    return items;
-  }, []);
+  return items;
+}
+
+export default function SectionD({ onComplete, onBack }: Props) {
+  const [mode, setMode] = useState<DMode>("pick");
+
+  const queue = useMemo(() => {
+    if (mode === "pick") return [];
+    return buildQueue(mode);
+  }, [mode]);
 
   const [currentIdx, setCurrentIdx] = useState(0);
   const [score, setScore] = useState(0);
+
+  if (mode === "pick") {
+    return (
+      <div>
+        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "1.5rem" }}>
+          <div>
+            <div className="section-label">Section D</div>
+            <h2 style={{ fontSize: "1.3rem" }}>Buffer Overflow</h2>
+          </div>
+          <button className="btn btn--outline" onClick={onBack}>EXIT</button>
+        </div>
+
+        <div className="question-box">
+          What would you like to practice?
+        </div>
+
+        <div style={{ display: "flex", flexDirection: "column", gap: "0.75rem", marginTop: "1rem" }}>
+          <button className="section-card" style={{ textAlign: "left" }} onClick={() => setMode("all")}>
+            <h3 style={{ fontSize: "1rem", fontWeight: 600, marginBottom: "0.25rem" }}>All Questions</h3>
+            <p style={{ fontSize: "0.8rem", color: "var(--text-muted)" }}>
+              MC questions + Short Response (exam &amp; extra)
+            </p>
+          </button>
+
+          <button className="section-card" style={{ textAlign: "left" }} onClick={() => setMode("mc")}>
+            <h3 style={{ fontSize: "1rem", fontWeight: 600, marginBottom: "0.25rem" }}>Multiple Choice Only</h3>
+            <p style={{ fontSize: "0.8rem", color: "var(--text-muted)" }}>
+              {bufferOverflowQuestions.length} buffer overflow MC questions
+            </p>
+          </button>
+
+          <button className="section-card" style={{ textAlign: "left" }} onClick={() => setMode("sr")}>
+            <h3 style={{ fontSize: "1rem", fontWeight: 600, marginBottom: "0.25rem" }}>Short Response Only</h3>
+            <p style={{ fontSize: "0.8rem", color: "var(--text-muted)" }}>
+              {shortResponseQuestions.length} short answer questions (exam + extra practice)
+            </p>
+          </button>
+        </div>
+      </div>
+    );
+  }
 
   const totalQuestions = queue.length;
   const current = queue[currentIdx];
@@ -81,12 +135,14 @@ export default function SectionD({ onComplete, onBack }: Props) {
     }
   };
 
+  const modeLabel = mode === "mc" ? "Multiple Choice" : mode === "sr" ? "Short Response" : "All Questions";
+
   return (
     <div>
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "1.5rem" }}>
         <div>
           <div className="section-label">Section D</div>
-          <h2 style={{ fontSize: "1.3rem" }}>Buffer Overflow</h2>
+          <h2 style={{ fontSize: "1.3rem" }}>Buffer Overflow — {modeLabel}</h2>
         </div>
         <button className="btn btn--outline" onClick={onBack}>EXIT</button>
       </div>
