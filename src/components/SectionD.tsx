@@ -76,31 +76,28 @@ export default function SectionD({ onComplete, onBack }: Props) {
           <button className="btn btn--outline" onClick={onBack}>EXIT</button>
         </div>
 
-        <div className="question-box">
+        <p style={{ color: "var(--text-muted)", marginBottom: "1.5rem" }}>
           What would you like to practice?
-        </div>
+        </p>
 
-        <div style={{ display: "flex", flexDirection: "column", gap: "0.75rem", marginTop: "1rem" }}>
-          <button className="section-card" style={{ textAlign: "left" }} onClick={() => setMode("all")}>
-            <h3 style={{ fontSize: "1rem", fontWeight: 600, marginBottom: "0.25rem" }}>All Questions</h3>
-            <p style={{ fontSize: "0.8rem", color: "var(--text-muted)" }}>
-              MC questions + Short Response (exam &amp; extra)
-            </p>
-          </button>
+        <div className="section-grid" style={{ gridTemplateColumns: "1fr" }}>
+          <div className="section-card" onClick={() => setMode("all")}>
+            <div className="section-label" style={{ color: "var(--accent)" }}>Recommended</div>
+            <h3>All Questions</h3>
+            <p>MC questions + Short Response (exam &amp; extra)</p>
+          </div>
 
-          <button className="section-card" style={{ textAlign: "left" }} onClick={() => setMode("mc")}>
-            <h3 style={{ fontSize: "1rem", fontWeight: 600, marginBottom: "0.25rem" }}>Multiple Choice Only</h3>
-            <p style={{ fontSize: "0.8rem", color: "var(--text-muted)" }}>
-              {bufferOverflowQuestions.length} buffer overflow MC questions
-            </p>
-          </button>
+          <div className="section-card" onClick={() => setMode("mc")}>
+            <div className="section-label" style={{ color: "var(--warning)" }}>Focus</div>
+            <h3>Multiple Choice Only</h3>
+            <p>{bufferOverflowQuestions.length} buffer overflow MC questions</p>
+          </div>
 
-          <button className="section-card" style={{ textAlign: "left" }} onClick={() => setMode("sr")}>
-            <h3 style={{ fontSize: "1rem", fontWeight: 600, marginBottom: "0.25rem" }}>Short Response Only</h3>
-            <p style={{ fontSize: "0.8rem", color: "var(--text-muted)" }}>
-              {shortResponseQuestions.length} short answer questions (exam + extra practice)
-            </p>
-          </button>
+          <div className="section-card" onClick={() => setMode("sr")}>
+            <div className="section-label" style={{ color: "var(--correct)" }}>Focus</div>
+            <h3>Short Response Only</h3>
+            <p>{shortResponseQuestions.length} short answer questions (exam + extra practice)</p>
+          </div>
         </div>
       </div>
     );
