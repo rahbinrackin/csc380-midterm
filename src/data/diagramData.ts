@@ -3,7 +3,7 @@ import type { DiagramQuestion } from "../types";
 export const diagramQuestions: DiagramQuestion[] = [
   {
     id: "q30-1",
-    imageUrl: "/diagrams/qbank-06.png",
+    imageUrl: "/diagrams/qbank-07.png",
     attackName: "Dumpster Diving",
     acceptableNames: [
       "dumpster diving",
@@ -25,7 +25,7 @@ export const diagramQuestions: DiagramQuestion[] = [
   },
   {
     id: "q30-2",
-    imageUrl: "/diagrams/qbank-06.png",
+    imageUrl: "/diagrams/qbank-07.png",
     attackName: "Shoulder Surfing",
     acceptableNames: [
       "shoulder surfing",
@@ -46,7 +46,7 @@ export const diagramQuestions: DiagramQuestion[] = [
   },
   {
     id: "q30-3",
-    imageUrl: "/diagrams/qbank-06.png",
+    imageUrl: "/diagrams/qbank-07.png",
     attackName: "Tailgating / Piggybacking",
     acceptableNames: [
       "tailgating",
@@ -70,7 +70,7 @@ export const diagramQuestions: DiagramQuestion[] = [
   },
   {
     id: "q30-4",
-    imageUrl: "/diagrams/qbank-06.png",
+    imageUrl: "/diagrams/qbank-07.png",
     attackName: "Stored XSS (Cross-Site Scripting)",
     acceptableNames: [
       "xss",
@@ -95,7 +95,7 @@ export const diagramQuestions: DiagramQuestion[] = [
   },
   {
     id: "q30-5",
-    imageUrl: "/diagrams/qbank-06.png",
+    imageUrl: "/diagrams/qbank-07.png",
     attackName: "CSRF (Cross-Site Request Forgery)",
     acceptableNames: [
       "csrf",
@@ -120,7 +120,7 @@ export const diagramQuestions: DiagramQuestion[] = [
   },
   {
     id: "q30-6",
-    imageUrl: "/diagrams/qbank-06.png",
+    imageUrl: "/diagrams/qbank-07.png",
     attackName: "Buffer Overflow",
     acceptableNames: [
       "buffer overflow",
@@ -146,7 +146,7 @@ export const diagramQuestions: DiagramQuestion[] = [
   },
   {
     id: "q30-7",
-    imageUrl: "/diagrams/qbank-06.png",
+    imageUrl: "/diagrams/qbank-07.png",
     attackName: "DNS Cache Poisoning",
     acceptableNames: [
       "dns cache poisoning",
@@ -167,7 +167,7 @@ export const diagramQuestions: DiagramQuestion[] = [
   },
   {
     id: "q30-8",
-    imageUrl: "/diagrams/qbank-06.png",
+    imageUrl: "/diagrams/qbank-07.png",
     attackName: "DDoS (Distributed Denial of Service)",
     acceptableNames: [
       "ddos",
@@ -192,7 +192,7 @@ export const diagramQuestions: DiagramQuestion[] = [
   },
   {
     id: "q30-9",
-    imageUrl: "/diagrams/qbank-06.png",
+    imageUrl: "/diagrams/qbank-07.png",
     attackName: "Impersonation",
     acceptableNames: [
       "impersonation",
@@ -216,7 +216,7 @@ export const diagramQuestions: DiagramQuestion[] = [
   },
   {
     id: "q30-10",
-    imageUrl: "/diagrams/qbank-06.png",
+    imageUrl: "/diagrams/qbank-07.png",
     attackName: "Ransomware",
     acceptableNames: [
       "ransomware",
@@ -239,7 +239,7 @@ export const diagramQuestions: DiagramQuestion[] = [
   },
   {
     id: "q30-11",
-    imageUrl: "/diagrams/qbank-07.png",
+    imageUrl: "/diagrams/qbank-08.png",
     attackName: "DNS Poisoning",
     acceptableNames: [
       "dns poisoning",
@@ -260,7 +260,7 @@ export const diagramQuestions: DiagramQuestion[] = [
   },
   {
     id: "q30-12",
-    imageUrl: "/diagrams/qbank-07.png",
+    imageUrl: "/diagrams/qbank-08.png",
     attackName: "ARP Spoofing",
     acceptableNames: [
       "arp spoofing",
@@ -282,7 +282,7 @@ export const diagramQuestions: DiagramQuestion[] = [
   },
   {
     id: "q30-13",
-    imageUrl: "/diagrams/qbank-07.png",
+    imageUrl: "/diagrams/qbank-08.png",
     attackName: "Smurf Attack (Amplification DDoS)",
     acceptableNames: [
       "smurf",
@@ -308,7 +308,7 @@ export const diagramQuestions: DiagramQuestion[] = [
   },
   {
     id: "q30-14",
-    imageUrl: "/diagrams/qbank-07.png",
+    imageUrl: "/diagrams/qbank-08.png",
     attackName: "IP Spoofing",
     acceptableNames: [
       "ip spoofing",
@@ -331,7 +331,7 @@ export const diagramQuestions: DiagramQuestion[] = [
   },
   {
     id: "q30-15",
-    imageUrl: "/diagrams/qbank-07.png",
+    imageUrl: "/diagrams/qbank-08.png",
     attackName: "Pharming",
     acceptableNames: [
       "pharming",

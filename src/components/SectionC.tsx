@@ -67,8 +67,8 @@ export default function SectionC({ onComplete, onBack }: Props) {
     return { borderLeft: "3px solid var(--wrong)" };
   };
 
-  const page1 = diagramQuestions.filter((q) => q.imageUrl.includes("qbank-06"));
-  const page2 = diagramQuestions.filter((q) => q.imageUrl.includes("qbank-07"));
+  const page1 = diagramQuestions.filter((q) => q.imageUrl.includes("qbank-07"));
+  const page2 = diagramQuestions.filter((q) => q.imageUrl.includes("qbank-08"));
   const page1Count = page1.length;
 
   return (
@@ -87,7 +87,7 @@ export default function SectionC({ onComplete, onBack }: Props) {
 
       {/* Page 1: Diagrams 1-10 */}
       <img
-        src="/diagrams/qbank-06.png"
+        src="/diagrams/qbank-07.png"
         alt="Diagrams 1 through 10"
         className="diagram-image"
         style={{ display: "block", margin: "0 auto 1.5rem", width: "100%" }}
@@ -147,7 +147,7 @@ export default function SectionC({ onComplete, onBack }: Props) {
 
       {/* Page 2: Diagrams 11-15 */}
       <img
-        src="/diagrams/qbank-07.png"
+        src="/diagrams/qbank-08.png"
         alt="Diagrams 11 through 15"
         className="diagram-image"
         style={{ display: "block", margin: "1.5rem auto", width: "100%" }}
