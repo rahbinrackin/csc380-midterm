@@ -147,7 +147,7 @@ export const diagramQuestions: DiagramQuestion[] = [
   {
     id: "q30-7",
     imageUrl: "/diagrams/qbank-07.png",
-    attackName: "DNS Cache Poisoning",
+    attackName: "DNS Poisoning",
     acceptableNames: [
       "dns cache poisoning",
       "dns poisoning",
@@ -163,7 +163,7 @@ export const diagramQuestions: DiagramQuestion[] = [
       "dns security",
     ],
     explanation:
-      "DNS cache poisoning corrupts the DNS resolver cache by injecting fraudulent entries, causing a domain name to resolve to an incorrect IP address. Victims are redirected to a malicious site while believing they are visiting a legitimate one. DNSSEC and trusted DNS servers are the primary defenses.",
+      "DNS poisoning corrupts the DNS resolution process by injecting fraudulent entries, causing a domain name to resolve to an incorrect IP address. Victims are redirected to a malicious site while believing they are visiting a legitimate one. DNSSEC and trusted DNS servers are the primary defenses.",
   },
   {
     id: "q30-8",
